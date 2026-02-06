@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Envío Correo - Sistemas Distribuidos</title>
+    <style>
+        body { font-family: Arial; margin: 40px; background: #f5f5f5; }
+        .container { max-width: 600px; margin: auto; background: white; padding: 30px; border-radius: 10px; }
+        h1 { color: #2c3e50; }
+        input, button { width: 100%; padding: 12px; margin: 8px 0; }
+        button { background: #3498db; color: white; border: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1> Envío de Correo</h1>
+        <p><strong>Para:</strong> gbricenor@ucentral.edu.co</p>
+        <p><strong>Integrantes:</strong> Lizeth Eliana Acevedo y Harold Nicolas Neisa</p>
+        
+        <form method="POST">
+            <input name="sender_email" placeholder="Tu Gmail" required>
+            <input type="password" name="sender_password" placeholder="Contraseña app" required>
+            <input name="member1" value="Lizeth Eliana Acevedo" required>
+            <input name="member2" value="Harold Nicolas Neisa" required>
+            <button type="submit">Enviar Correo</button>
+        </form>
+        
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <p style="color: green; padding: 10px; background: #e8f5e8;">
+                    {{ messages[0] }}
+                </p>
+            {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>
